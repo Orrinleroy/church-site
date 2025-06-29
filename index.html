@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Saints Church</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <div class="logo-circle">
+            <span class="logo-icon">
+              <img
+                src="/temp/logo.png"
+                alt="Logo"
+                class="logo-img"
+                height="40"
+                width="40"
+              />
+            </span>
+            <!-- <span class="logo-text">M</span> -->
+          </div>
+          <span class="brand-text ms-2">CSI ALL SAINTS</span>
+          <small class="brand-subtitle">CHURCH</small>
+        </a>
+
+        <!-- Mobile menu toggle -->
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">New Here?</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sermons</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Get Involved</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Care</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Give</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Service Times Bar -->
+    <div class="service-times-bar">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <span class="service-times">SUNDAYS | 8:30AM & 5:30AM</span>
+          </div>
+          <div class="col-md-6 text-end">
+            <a href="#" class="directions-link">
+              DIRECTIONS <i class="fas fa-external-link-alt ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-lg-8">
+            <div class="hero-content">
+              <p class="hero-subtitle">CSI ALL SAINTS CHURCH</p>
+              <h1 class="hero-title">Join Us on Sundays</h1>
+              <p class="hero-description">
+                We are a diverse, life-giving church in Madurai, TN.
+              </p>
+
+              <div class="hero-buttons mt-4">
+                <a
+                  href="https://youtu.be/xvFZjo5PgG0?si=yDLuOwVZa9bjh2Ek"
+                  class="btn btn-primary hero-btn me-3"
+                  >New Here?</a
+                >
+                <a href="#" class="btn btn-outline-light hero-btn"
+                  >Latest Sermon</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Theme Toggle -->
+      <!-- <div class="theme-toggle">
+            <i class="fas fa-sun"></i>
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
+            </label>
+            <i class="fas fa-moon"></i>
+        </div> -->
+
+      <!-- Badge -->
+      <div class="achievement-badge">
+        <div class="badge-circle">
+          <span class="badge-text">NEXT STEPS</span>
+          <i class="fas fa-arrow-right badge-arrow"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Statement Section -->
+    <section class="mission-section">
+      <div class="container">
+        <div class="row">
+          <!-- Mission Text -->
+          <div class="col-12 text-center mb-5">
+            <div class="mission-content">
+              <h1 class="mission-title">
+                <span class="mission-line">Love God.</span>
+                <span class="mission-line">Love People.</span>
+                <span class="mission-line">Change the World.</span>
+              </h1>
+            </div>
+          </div>
+
+          <!-- Mission Image -->
+          <div class="col-12">
+            <div class="mission-image-container">
+              <img
+                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                alt="Community outreach and love in action"
+                class="mission-image"
+              />
+              <div class="mission-overlay"></div>
+
+              <!-- Badge -->
+              <div class="mission-badge">
+                <div class="badge-circle-mission">
+                  <span class="badge-text-mission">NEXT STEPS</span>
+                  <i class="fas fa-arrow-right badge-arrow-mission"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section class="get-involved-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="get-involved-content">
+              <!-- Background Image -->
+              <div class="get-involved-bg">
+                <img
+                  src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                  alt="Community gathering"
+                  class="get-involved-image"
+                />
+                <div class="get-involved-overlay"></div>
+              </div>
+
+              <!-- Content -->
+              <div class="get-involved-inner">
+                <div class="row justify-content-center">
+                  <div class="col-lg-6 text-center">
+                    <h2 class="get-involved-title">
+                      Ready to Take the Next Step?
+                    </h2>
+                    <p class="get-involved-description">
+                      Join our community and discover how you can make a
+                      difference. Whether through volunteering, joining a small
+                      group, or serving others, there's a place for you here.
+                    </p>
+                    <a href="#" class="btn btn-get-involved">Get Involved</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="events-section">
+      <div class="container">
+        <h2 class="section-title">Upcoming Events</h2>
+
+        <!-- First Row -->
+        <div class="row mb-4">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="event-card" data-event="sunday-night-live">
+              <div class="event-card-bg sunday-night-live"></div>
+              <div class="event-card-overlay">
+                <div class="decorative-elements">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="event-content">
+                  <div class="event-date">Jun 29</div>
+                  <div class="event-title">YTH Sunday Night Live</div>
+                  <div class="event-location">Motivation Church</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="event-card" data-event="first-wednesday">
+              <div class="event-card-bg first-wednesday"></div>
+              <div class="event-card-overlay">
+                <div class="decorative-elements">
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="event-content">
+                  <div class="event-date">Jul 2</div>
+                  <div class="event-title">First Wednesday</div>
+                  <div class="event-location">Motivation Church</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="event-card" data-event="crew-nights">
+              <div class="event-card-bg crew-nights"></div>
+              <div class="event-card-overlay">
+                <div class="decorative-elements">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="event-content">
+                  <div class="event-date">Jul 6</div>
+                  <div class="event-title">Crew Nights</div>
+                  <div class="event-location">Motivation Church</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="row mb-5">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="event-card" data-event="baptism-sunday">
+              <div class="event-card-bg baptism-sunday"></div>
+              <div class="event-card-overlay">
+                <div class="decorative-elements">
+                  <i class="fas fa-dove"></i>
+                </div>
+                <div class="event-content">
+                  <div class="event-date">Jul 20</div>
+                  <div class="event-title">Baptism Sunday</div>
+                  <div class="event-location">Motivation Church</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="event-card" data-event="engage">
+              <div class="event-card-bg engage"></div>
+              <div class="event-card-overlay">
+                <div class="decorative-elements">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <div class="event-content">
+                  <div class="event-date">Jul 20</div>
+                  <div class="event-title">Engage</div>
+                  <div class="event-location">Motivation Church</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="event-card" data-event="yth-sunday">
+              <div class="event-card-bg yth-sunday"></div>
+              <div class="event-card-overlay">
+                <div class="decorative-elements">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="event-content">
+                  <div class="event-date">Jul 27</div>
+                  <div class="event-title">YTH Sunday Night Live</div>
+                  <div class="event-location">Motivation Church</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- All Events Button -->
+        <div class="text-end">
+          <button class="all-events-btn" onclick="showAllEvents()">
+            All Events
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Discover Motivation -->
+    <section class="discover-section">
+      <div class="container">
+        <h2 class="section-title">Discover Motivation</h2>
+
+        <div class="discover-carousel-container">
+          <div class="discover-carousel" id="discoverCarousel">
+            <!-- Visit - New Here Card -->
+            <div class="discover-card active" data-category="visit">
+              <div class="discover-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=face"
+                  alt="New Here"
+                  class="card-bg-image"
+                />
+                <div class="card-overlay"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-category">VISIT</div>
+                <h3 class="card-title">New Here?</h3>
+                <a href="#" class="learn-more-btn">
+                  Learn More <i class="fas fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Grow - Next Steps Card -->
+            <div class="discover-card" data-category="grow">
+              <div class="discover-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=600&fit=crop&crop=faces"
+                  alt="Next Steps"
+                  class="card-bg-image"
+                />
+                <div class="card-overlay"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-category">GROW</div>
+                <h3 class="card-title">Next Steps</h3>
+                <a href="#" class="learn-more-btn">
+                  Learn More <i class="fas fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Community - Small Groups Card -->
+            <div class="discover-card" data-category="community">
+              <div class="discover-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=500&h=600&fit=crop&crop=faces"
+                  alt="Small Groups"
+                  class="card-bg-image"
+                />
+                <div class="card-overlay"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-category">COMMUNITY</div>
+                <h3 class="card-title">Small Groups</h3>
+                <a href="#" class="learn-more-btn">
+                  Learn More <i class="fas fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Connect - Get Connected Card -->
+            <div class="discover-card" data-category="connect">
+              <div class="discover-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=500&h=600&fit=crop&crop=faces"
+                  alt="Get Connected"
+                  class="card-bg-image"
+                />
+                <div class="card-overlay"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-category">CONNECT</div>
+                <h3 class="card-title">Get Connected</h3>
+                <a href="#" class="learn-more-btn">
+                  Learn More <i class="fas fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Serve - Make a Difference Card -->
+            <div class="discover-card" data-category="serve">
+              <div class="discover-card-image">
+                <img
+                  src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=500&h=600&fit=crop&crop=faces"
+                  alt="Make a Difference"
+                  class="card-bg-image"
+                />
+                <div class="card-overlay"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-category">SERVE</div>
+                <h3 class="card-title">Make a Difference</h3>
+                <a href="#" class="learn-more-btn">
+                  Learn More <i class="fas fa-chevron-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Controls -->
+          <div class="carousel-controls">
+            <button class="carousel-btn prev-btn" id="prevBtn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn next-btn" id="nextBtn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Dots Indicator -->
+          <div class="carousel-dots" id="carouselDots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
