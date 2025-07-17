@@ -905,8 +905,15 @@ window.EventsModule = {
     formatEventDate
 };
 
-// Discover motivation
-// Discover Motivation Carousel JavaScript
+// Wrap everything in IIFE to prevent global scope pollution
+(function() {
+    'use strict';
+    
+    // Prevent multiple executions
+    if (window.DiscoverCarouselLoaded) {
+        return;
+    }
+    window.DiscoverCarouselLoaded = true;
 
 class DiscoverCarousel {
     constructor() {
@@ -915,6 +922,21 @@ class DiscoverCarousel {
         this.dots = document.querySelectorAll('.dot');
         this.prevBtn = document.getElementById('prevBtn');
         this.nextBtn = document.getElementById('nextBtn');
+        
+        // Debug: Check if all elements exist
+        console.log('Carousel elements found:', {
+            carousel: !!this.carousel,
+            cards: this.cards.length,
+            dots: this.dots.length,
+            prevBtn: !!this.prevBtn,
+            nextBtn: !!this.nextBtn
+        });
+        
+        // Exit if required elements don't exist
+        if (!this.carousel || !this.cards.length || !this.prevBtn || !this.nextBtn) {
+            console.error('Required carousel elements missing');
+            return;
+        }
         
         this.currentIndex = 0;
         this.totalCards = this.cards.length;
@@ -933,9 +955,21 @@ class DiscoverCarousel {
     }
     
     bindEvents() {
-        // Navigation buttons
-        this.prevBtn.addEventListener('click', () => this.prevSlide());
-        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        // Navigation buttons - check if elements exist first
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Previous button clicked');
+                this.prevSlide();
+            });
+        }
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Next button clicked');
+                this.nextSlide();
+            });
+        }
         
         // Dot indicators
         this.dots.forEach((dot, index) => {
@@ -964,6 +998,10 @@ class DiscoverCarousel {
     updateCarousel() {
         // Calculate transform value
         const transformValue = -this.currentIndex * this.cardWidth;
+        console.log(`Moving to slide ${this.currentIndex}, transform: ${transformValue}px`);
+        
+        // Apply transform with transition
+        this.carousel.style.transition = 'transform 0.3s ease-in-out';
         this.carousel.style.transform = `translateX(${transformValue}px)`;
         
         // Update active states
@@ -986,13 +1024,17 @@ class DiscoverCarousel {
     }
     
     nextSlide() {
+        console.log(`Next slide called. Current: ${this.currentIndex}, Total: ${this.totalCards}`);
         this.currentIndex = (this.currentIndex + 1) % this.totalCards;
+        console.log(`New index: ${this.currentIndex}`);
         this.updateCarousel();
         this.resetAutoPlay();
     }
     
     prevSlide() {
+        console.log(`Previous slide called. Current: ${this.currentIndex}, Total: ${this.totalCards}`);
         this.currentIndex = (this.currentIndex - 1 + this.totalCards) % this.totalCards;
+        console.log(`New index: ${this.currentIndex}`);
         this.updateCarousel();
         this.resetAutoPlay();
     }
@@ -1242,6 +1284,12 @@ class DiscoverAnimationObserver {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Prevent multiple initializations
+    if (window.discoverCarouselInitialized) {
+        return;
+    }
+    window.discoverCarouselInitialized = true;
+    
     // Check if required elements exist
     const carouselElement = document.getElementById('discoverCarousel');
     if (!carouselElement) {
@@ -1255,8 +1303,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize animation observer
     const animationObserver = new DiscoverAnimationObserver();
     
-    // Add CSS for animation observer
-    const style = document.createElement('style');
+    // Add CSS for animation observer (only if not already added)
+    if (!document.getElementById('discover-carousel-styles')) {
+        const style = document.createElement('style');
+        style.id = 'discover-carousel-styles';
     style.textContent = `
         .section-title,
         .discover-card {
@@ -1280,6 +1330,17 @@ document.addEventListener('DOMContentLoaded', function() {
         /* Ensure smooth transitions */
         .discover-carousel {
             transition: transform 0.3s ease-in-out;
+            display: flex;
+            will-change: transform;
+        }
+        
+        .discover-card {
+            flex: 0 0 auto;
+            margin-right: 30px;
+        }
+        
+        .discover-card:last-child {
+            margin-right: 0;
         }
         
         /* Card hover effects */
@@ -1318,7 +1379,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Utility functions
-const DiscoverUtils = {
+window.DiscoverUtils = window.DiscoverUtils || {
     // Add new card dynamically
     addCard: function(cardData) {
         const carousel = document.getElementById('discoverCarousel');
@@ -1459,6 +1520,8 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         DiscoverCarousel,
         DiscoverAnimationObserver,
-        DiscoverUtils
+        DiscoverUtils: window.DiscoverUtils
     };
 }
+
+})(); // End of IIFE
