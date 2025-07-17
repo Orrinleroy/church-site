@@ -1525,3 +1525,37 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 })(); // End of IIFE
+
+//footer
+
+        // Smooth scroll to top functionality
+        document.querySelector('.footer-credit .badge').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add hover effects to social icons
+        const socialIcons = document.querySelectorAll('.social-icon');
+        socialIcons.forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Add click tracking for footer links (optional)
+        const footerLinks = document.querySelectorAll('.footer-links a');
+        footerLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Footer link clicked:', this.textContent);
+                // Add your navigation logic here
+            });
+        });
